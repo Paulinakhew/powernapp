@@ -4,6 +4,14 @@ html {
 	position: relative;
 }
 
+.white-text {
+	color: white;
+	margin: auto;
+	text-align: center;
+	display: block;
+	font-family: arial; 
+}
+
 body {
 	margin: 0px;
 	border: 0px;

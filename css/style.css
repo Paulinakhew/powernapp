@@ -2255,6 +2255,8 @@ html {
   animation-iteration-count: infinite;
   transform-origin: 50% 50%;
   animation-timing-function: linear; 
+  z-index: 0;
+  position: relative;
 }
 
 .clouds {
@@ -2262,6 +2264,9 @@ html {
   text-align: center;
   display: block;
   width: 100%;
+  z-index: 1;
+  position: relative;
+  
 }
 
 .moon-container {
@@ -2270,6 +2275,10 @@ html {
   text-align: center;
   display: block;
   width: 100%;
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index:-1;
 }
 
 .cloud-container:hover {

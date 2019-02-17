@@ -4,15 +4,23 @@ html {
 	position: relative;
 }
 
+body {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
 .night-sky {
 	display: block;
-	position: absolute;
+	position: fixed;
 	background: #111;
 	background: linear-gradient(0deg, #000, #333);
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	width: 100%;
+	height: 100vh;
 	overflow: hidden;
 	z-index: -2;
 }
@@ -2280,17 +2288,29 @@ html {
 }
 
 .cloud-container {
-	position: fixed;
+	position: relative;
 	opacity: 1;
 	transition: 5s ease;
 	padding-top: 5%;
 	text-align: center;
 	width: 100%;
+	height: 100vh;
 }
 
 .cloud-container:hover {
 	opacity: 0;
 	padding-top: 0%;
+}
+
+#info {
+	//padding-top: 100vh;
+}
+
+#clock {
+	margin: 0px;
+	text-align: center;
+	color: white;
+	font-size: 20vw;
 }
 
 @keyframes rotate {

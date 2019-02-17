@@ -7,128 +7,6 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="static/favicon.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="main.js" type="text/javascript"></script>
-		<script>
-			$(document).ready(function() {
-				$('#ad').fadeOut(1);
-				$('.back').click(function() {
-					window.location = "http://sleepyti.me/";
-				});
-	
-				$('#calculate').click(function() {
-					if($('#hour').val() != '(hour)' && $('#minute').val() != '(minute)') {
-						$('#start').hide();
-						var setTime = new Date();
-	
-						if($('#hour').val() == 12) {
-							$('#hour').val(0);
-						}
-	
-						if($('#ampm').val() == "AM") {
-							setTime.setHours($('#hour').val());
-						}
-						else if($('#ampm').val() == "PM") {
-							setTime.setHours(+$('#hour').val() + 12);
-						}
-	
-						setTime.setMinutes($('#minute').val());
-	
-						var res1 = new Date(setTime.getTime() - 270*60000);
-						var res2 = new Date(res1.getTime() - 90*60000);
-						var res3 = new Date(res2.getTime() - 90*60000);
-						var res4 = new Date(res3.getTime() - 90*60000);
-	
-						function retDate(dateObj) {
-							var formatted = '';
-							var pm = false;
-							if(dateObj.getHours() > 12) {
-								formatted = dateObj.getHours() - 12;
-								pm = true;
-							} else if(dateObj.getHours() < 12 && dateObj.getHours() != 0) {
-								formatted = dateObj.getHours();
-							} else if(dateObj.getHours() == 0){
-								formatted = "12";
-							} else if(dateObj.getHours() == 12){
-								formatted = "12";
-								pm = true;
-							}
-							if(dateObj.getMinutes() < 10) {
-								formatted = formatted + ":0" + dateObj.getMinutes();
-							} else {
-								formatted = formatted + ":" + dateObj.getMinutes();
-							}
-							if(pm == true) {
-								formatted = formatted + " PM";
-							} else {
-								formatted = formatted + " AM";
-							}
-							return formatted;
-						}
-	
-						$('#result4').html(String(retDate(res1)));
-						$('#result3').html(String(retDate(res2)));
-						$('#result2').html(String(retDate(res3)));
-						$('#result1').html(String(retDate(res4)));
-				
-						$('#results').fadeIn();
-						$('#feedback').fadeIn();
-						$('#ad').fadeIn();
-					} // end hour/minute check if
-					else {
-						alert("Please select an hour and a minute before trying to calculate!");
-					} // end not-filled check
-				}); // end calculate
-	
-				$('#zzz').click(function() {
-					$('#start').hide();
-					var zDate = new Date();
-	
-					var res1 = new Date(zDate.getTime() + 104*60000);
-					var res2 = new Date(res1.getTime() + 90*60000);
-					var res3 = new Date(res2.getTime() + 90*60000);
-					var res4 = new Date(res3.getTime() + 90*60000);
-					var res5 = new Date(res4.getTime() + 90*60000);
-					var res6 = new Date(res5.getTime() + 90*60000);
-	
-					function retDate(dateObj) {
-						var formatted = '';
-						var pm = false;
-						if(dateObj.getHours() > 12) {
-							formatted = dateObj.getHours() - 12;
-							pm = true;
-						} else if(dateObj.getHours() < 12 && dateObj.getHours() != 0) {
-							formatted = dateObj.getHours();
-						} else if(dateObj.getHours() == 0) {
-							formatted = "12";
-						} else if(dateObj.getHours() == 12) {
-							formatted = "12";
-							pm = true;
-						}
-						if(dateObj.getMinutes() < 10) {
-							formatted = formatted + ":0" + dateObj.getMinutes();
-						} else {
-							formatted = formatted + ":" + dateObj.getMinutes();
-						}
-						if(pm == true) {
-							formatted = formatted + " PM";
-						} else {
-							formatted = formatted + " AM";
-						}
-						return formatted;
-					}
-	
-					$('#resultNow1').html(String(retDate(res1)));
-					$('#resultNow2').html(String(retDate(res2)));
-					$('#resultNow3').html(String(retDate(res3)));
-					$('#resultNow4').html(String(retDate(res4)));
-					$('#resultNow5').html(String(retDate(res5)));
-					$('#resultNow6').html(String(retDate(res6)));
-				
-					$('#resultsNow').fadeIn();
-					$('#feedback').fadeIn();
-					$('#ad').fadeIn();
-				});
-			});
-		</script>
 	</head>
 	
 	<body>
@@ -347,18 +225,19 @@
 		<h1>Goodnight Sleep</h1>
 <br>
 <br>
-<button id="imgoingtosleep" type="button">I'M GOING TO SLEEP<button>
-
+<div>
+<h3>Press this button if you are going to sleep now</h3>
+<button id="imgoingtosleep" type="button">Calculate
+</button><div>
 <br>
 <br>
-<br>
-<br>
-
-
-<h1>Quick Refreshers</h1>
 <br>
 
-<h9>How Type of Nap Would You Like to Take?</h9>
+<div>
+<h1>Quick Naps</h1>
+<br>
+
+<h9>Which nap do you want to take?</h9>
 <select>
         <option value="ThePowerNap">The Power Nap (10-15 mins)</option>
         <option value="TheNASANap">The NASA Nap (26 mins)</option>
@@ -367,9 +246,11 @@
         <option value="TheFullSleepCycleNap">The Full Sleep Cycle Nap (90 mins)</option>
 
 </select>
+<button type="button" id='imgoingtosleep'>Calculate</button>
 <br>
-<button type="button" onclick="alert('Shababshaba DingDong!')">How Long Do I Nap For?</button>
-
+</div>
+<br>
+<br>
 
 </form> 
 </div>

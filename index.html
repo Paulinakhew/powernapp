@@ -2,6 +2,7 @@
 <html lang="en" >
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<title>Power Napp</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="icon" type="image/png" sizes="16x16" href="static/favicon.png">
@@ -220,38 +221,40 @@
 		</div>
 		<br>
 		<br>
-		<br>
-		<br>
+
 		<div id="info">
 			<p id="clock">HH:MM</p>
+			<br><br>
 		</div>
-		<div class="white-text">
-		<h1>Goodnight Sleep</h1>
-<div>
-<h3>Press this button if you are going to sleep now</h3>
-<button id="imgoingtosleep" type="button">Calculate
-</button>
-<br>
-<br>
-
-<div>
-<h1>Quick Naps</h1>
-<p>Which nap do you want to take?</p>
-<select>
-        <option value="ThePowerNap">The Power Nap (10-15 mins)</option>
-        <option value="TheNASANap">The NASA Nap (26 mins)</option>
-        <option value="TheBadNap">The Bad Nap (30 mins)</option>
-        <option value="TheSlow-WaveSleepNap">The Slow-waves Sleep Nap (60 mins)</option>
-        <option value="TheFullSleepCycleNap">The Full Sleep Cycle Nap (90 mins)</option>
-
-</select>
-<button type="button" id='imgoingtosleep'>Calculate</button>
-<br>
-</div>
-<br>
-<br>
-
-</form> 
-</div>
+		<div class='row white-text'>
+			<div class='column'>
+				<h1>Deep Sleep</h1>
+				<h3>Press this button if you are going to sleep now</h3>
+				<button id="imgoingtosleep" class="btn btn-outline-secondary" type="button">Calculate</button>
+				<br>
+				<br>
+			</div>
+			<div class='column'>
+				<h1>Quick Naps</h1>
+				<h3>Which nap do you want to take?</h3>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<select class='btn btn-outline-secondary'>
+							<option value="ThePowerNap">The Power Nap (10-15 mins)</option>
+							<option value="TheNASANap">The NASA Nap (26 mins)</option>
+							<option value="TheBadNap">The Bad Nap (30 mins)</option>
+							<option value="TheSlow-WaveSleepNap">The Slow-waves Sleep Nap (60 mins)</option>
+							<option value="TheFullSleepCycleNap">The Full Sleep Cycle Nap (90 mins)</option>
+					</select>
+					<button type="button" class="btn btn-outline-secondary" id='imgoingtosleep'>Calculate</button>
+				</div>
+				<br>
+			</div>
+			<br>
+			<br>
+		</div>
 	</body>
+	<footer class="container">
+		<p class="float-right"><a href="" class="external-link" style='color:#6C757D'>Back to top</a></p>
+		<p class="copyright" style='color: #6C757D'>&copy; Paulina Khew, Tony Ilersich, Eddie Sun, and Samuel Chen 2019 </p>
+	</footer>
 </html>

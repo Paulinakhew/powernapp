@@ -15,17 +15,32 @@ const TICKS_PER_SLOW_WAVES_NAP = 60 * TICKS_PER_MIN;
 function refresh()
 {
 	var elem = $("#clock")[0];
-	var time = new Date();
-	var hh = time.getHours().toString().padStart(2, "0");
-	var mm = time.getMinutes().toString().padStart(2, "0");
-	var ss = time.getSeconds().toString().padStart(2, "0");
-	elem.innerText = hh + ":" + mm + ":" + ss;
-	
+	elem.innerText = localTimeStr(new Date(), true);
 	setTimeout(refresh, REFRESH_INTERVAL);
+}
+
+//generate a string representing the local time on a 24h clock
+function localTimeStr(date, showSeconds = false)
+{
+	//get hours, minutes
+	var hh = date.getHours().toString().padStart(2, "0");
+	var mm = date.getMinutes().toString().padStart(2, "0");
+	var str = hh + ":" + mm;
+	
+	//add seconds if necessary
+	if (showSeconds)
+	{
+		var ss = date.getSeconds().toString().padStart(2, "0");
+		str += ":" + ss;
+	}
+	
+	return str;
 }
 
 $(document).ready(function()
 {
+	console.log(localTimeStr(new Date()));
+	
 	console.log("page ready");
 	
 	$("#deep-sleep-submit").click(function()
@@ -44,7 +59,7 @@ $(document).ready(function()
 		{
 			//calculate time
 			alarmTime += TICKS_PER_REM_CYCLE;
-			var timeStr = (new Date(alarmTime)).toLocaleTimeString();
+			var timeStr = localTimeStr(new Date(alarmTime));
 			
 			//format separator
 			if (i != 0) msg += ",   ";
@@ -81,7 +96,7 @@ $(document).ready(function()
 		
 		//calculate time to set alarm
 		var alarmTime = Date.now() + TICKS_TO_FALL_ASLEEP + napTicks;
-		var timeStr = (new Date(alarmTime)).toLocaleTimeString();
+		var timeStr = localTimeStr(new Date(alarmTime));
 		var msg = "Get up at " + timeStr;
 		
 		//notify user

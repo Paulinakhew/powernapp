@@ -45,6 +45,14 @@ body {
 	padding: 0px;
 }
 
+.under {
+	z-index:-1;
+}
+
+.over {
+	z-index:1;
+}
+
 .night-sky {
 	display: block;
 	position: fixed;
@@ -60,52 +68,50 @@ body {
 	z-index: -2;
 }
 
-.moon {
+#moon-container {
 	margin: auto;
 	text-align: center;
 	display: block;
+	width: 40vw;
+	height: auto;
+	border-radius: 50%;
+}
+
+#moon-img {
+	width: 100%;
+	height: auto;
 	animation-name: rotate;
 	animation-duration: 160s;
 	transform-origin: 50% 50%;
+	pointer-events: none;
 }
 
-.clouds {
-	margin: auto;
-	text-align: center;
-	display: block;
-	width: 100%;
-}
-
-.moon-container {
-	position: fixed;
-	padding-top: 5%;
-	margin: auto;
-	text-align: center;
-	display: block;
-	width: 100%;
-}
-
-.under {
-	z-index:-1;
-}
-
-.over {
-	z-index:1;
-}
-
-.cloud-container {
-	position: relative;
+#cloud-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 	opacity: 1;
 	transition: 5s ease;
 	padding-top: 5%;
+	padding-bottom: 0%;
 	text-align: center;
-	width: 100%;
-	height: 100vh;
+	pointer-events: none;
 }
 
-.cloud-container:hover {
+#moon-container:hover #cloud-container {
 	opacity: 0;
 	padding-top: 0%;
+	padding-bottom: 5%;
+	pointer-events: none;
+}
+
+#cloud-img {
+	margin: auto;
+	text-align: center;
+	display: block;
+	width: 98vw;
+	height: auto;
+	pointer-events: none;
 }
 
 #info {

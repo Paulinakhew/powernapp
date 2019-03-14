@@ -11,3 +11,16 @@ The background was created using CSS animations. Below is a static preview. The 
 ### Link to CSS animations
 A Pen created at CodePen.io. You can find this one at https://codepen.io/paulinakhew/pen/jdQKYr.
 
+### Our Team
+These are the people that made this project in alphabetical order:
+
+| [@EddieSun888][EddieSun888-user] | [@TonyIlersich][TonyIlersich-user] | [@Paulinakhew][Paulinakhew-user]
+|---|---|---|
+| [![][EddieSun888-img]][EddieSun888-user] | [![][TonyIlersich-img]][TonyIlersich-user] | [![][Paulinakhew-img]][Paulinakhew-user]
+
+[EddieSun888-img]: https://avatars2.githubusercontent.com/u/40608554?s=460&v=4
+[TonyIlersich-img]: https://avatars2.githubusercontent.com/u/10392305?s=460&v=4
+[Paulinakhew-img]: https://avatars2.githubusercontent.com/u/40904028?s=460&v=4
+[EddieSun888-user]: https://github.com/EddieSun888
+[TonyIlersich-user]: https://github.com/TonyIlersich
+[Paulinakhew-user]: https://github.com/Paulinakhew
